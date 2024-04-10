@@ -23,3 +23,11 @@ INSERT into student values(2, "Siddh", 22);
 
 -- printing the table
 SELECT * FROM student;
+
+SHOW DATABASES;
+SHOW TABLES;
+
+INSERT INTO student(id, name, age) VALUES (3, "Radhika", 22),(4, "Utsavi", 24);
+SELECT * FROM student;
+
+INSERT INTO student VALUES (5, "Tathya", 26);
