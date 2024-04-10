@@ -97,3 +97,19 @@ set marks = marks+1;
 insert into student values (8, "xyz", 40, "E", "Hyderabad");
 
 delete from student where marks < 50;
+
+create table dept(
+id int primary key,
+name varchar(20)
+);
+
+create table teacher(
+id int primary key,
+name varchar(20),
+dept_id int,
+foreign key (dept_id) references dept(id)
+);
+
+select * from dept;
+
+select * from teacher;
