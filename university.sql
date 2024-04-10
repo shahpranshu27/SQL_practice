@@ -64,3 +64,36 @@ select city, name, count(name) from student group by city, name;
 select city, avg(marks) from student group by city;
 
 select city, avg(marks) from student group by city order by city;
+
+-- if at least 1 person from the city should have scored marks > 90
+select count(name), city from student group by city having max(marks)>90;
+
+select city 
+from student
+where grade = "A"
+group by city
+having max(marks)>90
+order by city desc;
+
+set sql_safe_updates = 0;
+
+update student 
+set grade="O" 
+where grade="A";
+
+select * from student;
+
+update student
+set marks=82
+where marks=45;
+
+update student
+set grade="C"
+where marks=82;
+
+update student
+set marks = marks+1;
+
+insert into student values (8, "xyz", 40, "E", "Hyderabad");
+
+delete from student where marks < 50;
