@@ -20,6 +20,8 @@ values
 (5, "Siddh", 80, "D", "Mumbai"),
 (6, "Yashvi", 45, "F", "Chennai");
 
+insert into student values (7, "Atman", 83, "C", "Delhi");
+
 select * from student;
 
 select rollno, name from student;
@@ -40,3 +42,25 @@ select * from student where city in ("Ahmedabad","Boston");
 select * from student where city not in ("Ahmedabad","Boston");
 
 select * from student where marks>80 limit 3;
+
+select * from student order by city desc; -- asc for ascending, desc for descending
+
+-- print marks of top 3 students
+select * from student order by marks desc limit 3;
+
+select max(marks) from student;
+
+select min(marks) from student;
+
+select avg(marks) from student;
+
+select sum(marks) from student;
+
+select count(marks) from student;
+
+-- count number of students in each city
+select city, name, count(name) from student group by city, name;
+
+select city, avg(marks) from student group by city;
+
+select city, avg(marks) from student group by city order by city;
