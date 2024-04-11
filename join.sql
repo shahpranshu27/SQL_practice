@@ -30,16 +30,19 @@ from students as s -- we can use either words for the joining, i.e. students or 
 inner join course as c -- we can use either names for joining i.e. course or c
 on students.student_id=course.student_id;
 
+-- left join
 select * 
 from students
 left join course
 on students.student_id = course.student_id;
 
+-- right join
 select * 
 from students as s
 right join course as c
 on s.student_id = c.student_id;
 
+-- full join
 select *
 from students as s
 left join course as c
@@ -49,3 +52,30 @@ select *
 from students as s
 right join course as c
 on s.student_id = c.student_id;
+
+-- left exclusive join i.e. only A
+select *
+from students as s
+left join course as c
+on s.student_id = c.student_id
+where c.student_id is null;
+
+-- right exclusive join i.e. only B
+select *
+from students as s
+right join course as c
+on s.student_id = c.student_id
+where s.student_id is null;
+
+-- full exclusive join, i.e. only A and only B, exclusing the intersection
+select *
+from students as s
+left join course as c
+on s.student_id = c.student_id
+where c.student_id is null
+union
+select *
+from students as s
+right join course as c
+on s.student_id = c.student_id
+where s.student_id is null;
