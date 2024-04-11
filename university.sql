@@ -103,13 +103,46 @@ id int primary key,
 name varchar(20)
 );
 
+insert into dept(id, name) 
+values 
+(101, "Quant"),
+(102, "Verbal");
+
+update dept
+set id=103
+where id=102;
+
+update dept
+set id = 111
+where id = 101;
+
+select * from dept;
+
 create table teacher(
 id int primary key,
 name varchar(20),
 dept_id int,
 foreign key (dept_id) references dept(id)
+-- write below tags, only if we want to reflect the changes from the dept table to teacher table. like if there's any updation or deletion in dept table, it would get reflected in the teacher table as well
+-- on delete cascade
+-- on update cascade
 );
 
-select * from dept;
+drop table teacher;
+
+create table teacher(
+id int primary key,
+name varchar(20),
+dept_id int,
+foreign key (dept_id) references dept(id)
+-- write below tags, only if we want to reflect the changes from the dept table to teacher table. like if there's any updation or deletion in dept table, it would get reflected in the teacher table as well
+on delete cascade
+on update cascade
+);
+
+insert into teacher
+values
+(101, "pranshu", 101),
+(102, "radhika", 102);
 
 select * from teacher;
