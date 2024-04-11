@@ -146,3 +146,54 @@ values
 (102, "radhika", 102);
 
 select * from teacher;
+
+create table student(
+rollno int primary key,
+name varchar(20),
+marks int not null,
+grade varchar(2),
+city varchar(20)
+);
+
+insert into student
+(rollno, name, marks, grade, city)
+values 
+(1, "Pranshu", 98, "A", "Ahmedabad"),
+(2, "Radhika", 97, "A", "Boston"),
+(3, "Tathya", 90, "B", "Delhi"),
+(4, "Utsavi", 85, "C", "Texas"),
+(5, "Siddh", 80, "D", "Mumbai"),
+(6, "Yashvi", 45, "F", "Chennai");
+
+insert into student values (7, "Atman", 83, "C", "Delhi");
+
+select * from student;
+
+alter table student
+add column age int not null default 19;
+
+alter table student
+modify column age varchar(2);
+
+alter table student
+change age stud_age int;
+
+insert into student values (8, "Gagan", 73, "C", "Delhi", 123);
+
+insert into student(rollno, name, marks, stud_age)
+values (9, "Magan", 79, 100);
+
+update student
+set grade="A"
+where grade="O";
+
+alter table student
+drop column stud_age;
+
+alter table student
+rename students;
+
+alter table students
+rename student;
+
+select * from students;
