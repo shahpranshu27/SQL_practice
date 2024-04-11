@@ -242,3 +242,13 @@ select * from student where city="Delhi";
 select max(marks) from (select * from student where city="Delhi") as temp; -- whenever we use condition in from, we have to use an alias name for the table
 
 select max(marks) from student where city="Delhi";
+
+create view view1 as select name, rollno from student;
+
+select * from view1;
+
+create view view2 as select name, rollno, marks from student;
+
+select * from view2 where marks>90;
+
+drop view view2;
