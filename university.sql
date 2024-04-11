@@ -197,3 +197,14 @@ alter table students
 rename student;
 
 select * from students;
+
+create table stu(
+id int primary key,
+name varchar(20)
+);
+
+insert into stu values (1,"pranshu"), (2, "radhika");
+
+select * from stu;
+
+truncate table stu; -- so, the table still remains, just the data from table is deleted
