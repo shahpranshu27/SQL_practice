@@ -224,3 +224,21 @@ alter table stu
 change column id student_id int;
 
 drop table stu;
+
+select * from student;
+
+-- select name from student where (select * from student where marks>avg(marks));
+
+select avg(marks) from student;
+
+select name, marks from student where marks>(select avg(marks) from student);
+
+select rollno, name from student where rollno%2=0;
+
+select rollno, name from student where rollno in (select rollno from student where rollno%2=0);
+
+select * from student where city="Delhi";
+
+select max(marks) from (select * from student where city="Delhi") as temp; -- whenever we use condition in from, we have to use an alias name for the table
+
+select max(marks) from student where city="Delhi";
