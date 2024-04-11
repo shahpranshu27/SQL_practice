@@ -200,11 +200,27 @@ select * from students;
 
 create table stu(
 id int primary key,
-name varchar(20)
+name varchar(20),
+marks int,
+grade varchar(2)
 );
 
-insert into stu values (1,"pranshu"), (2, "radhika");
+insert into stu 
+values 
+(1, "pranshu", 97, "A"), 
+(2, "radhika", 98, "A"),
+(3, "tathya", 70, "C");
 
 select * from stu;
 
+delete from stu where marks<80;
+
+alter table stu
+drop column grade;
+
 truncate table stu; -- so, the table still remains, just the data from table is deleted
+
+alter table stu
+change column id student_id int;
+
+drop table stu;
