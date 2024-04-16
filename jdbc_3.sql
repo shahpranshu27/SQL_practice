@@ -11,3 +11,7 @@ primary key(id)
 );
 
 desc users;
+
+insert into users values(1, "pranshu","pranshu@gmail.com","india");
+
+select * from users;
